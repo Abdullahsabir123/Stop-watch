@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import { StrictMode } from 'react';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [a, setA] = useState(0);
+
+  function inc() {
+    console.clear();
+    setA(a + 1);
+    console.log(a + 1);
+  }
+
+  function dec() {
+    console.clear();
+    setA(a - 1);
+    console.log(a - 1); 
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <StrictMode>
+      <center>
+        <button onClick={dec}> - </button>
+        {a}
+        <button onClick={inc}> + </button>
+      </center>
+    </StrictMode>
+  );
 }
-
-export default App
