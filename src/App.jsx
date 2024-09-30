@@ -75,7 +75,7 @@ const Stopwatch = () => {
         Reset
       </button>
       <button onClick={handleDisplayComputerTime}>
-        Display Computer Time
+        Real Time
       </button>
       {displayComputerTime && (
         <div style={{ marginTop: '20px', fontSize: '1.5rem' }}>
